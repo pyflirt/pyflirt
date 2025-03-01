@@ -1,4 +1,3 @@
-
 simple = [
     "Are you a magician? Because whenever I look at you, everyone else disappears.",
     "Is your name Google? Because you have everything I've been searching for.",
@@ -165,3 +164,9 @@ advance = [
     "Every second with you is a fragment of eternity worth cherishing.",
     "You are the cosmic wonder my soul has long sought after."
 ]
+
+en_flirt = {key: value for key, value in {
+    "simple": simple,
+    "advance": advance,
+    "all": sum([simple, advance], [])
+}.items()}
