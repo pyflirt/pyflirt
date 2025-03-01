@@ -1,5 +1,3 @@
-
-
 simple = [
     "ਤੈਨੂੰ ਵੇਖ ਕੇ ਤਾਂ ਦਿਲ ਬੋਲ ਪਿਆ, ਬਸ ਤੂੰ ਹੀ ਤੂੰ ਹੁਣ ਹਮੇਸ਼ਾ ਹੋਵੇ।",
     "ਤੇਰੀ ਹੱਸ ਦਿਲ ਨੂੰ ਅੱਤ ਪਸੰਦ ਆਉਂਦੀ ਏ, ਤੂੰ ਹੱਸਦੀ ਰਿਹਾ ਕਰ।",
@@ -111,3 +109,9 @@ advance = [
     "ਤੇਰੀ ਅੱਖੀਆਂ ਤਾਂ ਦਿਲ ਦਾ ਬਲੂਟੂਥ ਆਟੋਮੈਟਿਕ ON ਕਰ ਦਿੰਦੀ",
     "ਤੂੰ ਦਿਲ ਦੀ RAM ਵਾਂਗ ਹੈ, ਬਿਨਾ ਤੇਰੇ slow feel ਹੁੰਦਾ",
 ]
+
+pa_flirt = {key: value for key, value in {
+    "simple": simple,
+    "advance": advance,
+    "all": sum([simple, advance], [])
+}.items()}
