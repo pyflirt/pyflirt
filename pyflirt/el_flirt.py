@@ -92,3 +92,9 @@ advance = [
     "Αν η ζωή μου ήταν όνειρο, εσύ θα ήσουν το καλύτερο κομμάτι του!",
     "Το να σε κρατώ στην αγκαλιά μου είναι το μόνο πράγμα που θέλω να κάνω για πάντα!"
 ]
+
+el_flirt = {key: value for key, value in {
+    "simple": simple,
+    "advance": advance,
+    "all": sum([simple, advance], [])
+}.items()}
