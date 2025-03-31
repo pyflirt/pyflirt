@@ -89,3 +89,8 @@ advance = [
     "Te vagy a legcsodálatosabb meglepetés, amit az élet valaha adott nekem."
 ]
 
+hu_flirt = {key: value for key, value in {
+    "simple": simple,
+    "advance": advance,
+    "all": sum([simple, advance], [])
+}.items()}
