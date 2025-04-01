@@ -140,3 +140,9 @@ advance = [
     "Tavo buvimas mano gyvenime - tai vertybė, kurios negaliu įvertinti.",
     "Tavo meilė man yra vienas didžiausių gyvenimo turtų."
 ]
+
+it_flirt = {key: value for key, value in {
+    "simple": simple,
+    "advance": advance,
+    "all": sum([simple, advance], [])
+}.items()}
