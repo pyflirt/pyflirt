@@ -168,5 +168,8 @@ advance = [
     "Ти – моє серце, що б’ється тільки для тебе."
 ]
 
-for line in advance_flirt_lines:
-    print(line)
+uk_flirt = {key: value for key, value in {
+    "simple": simple,
+    "advance": advance,
+    "all": sum([simple, advance], [])
+}.items()}
