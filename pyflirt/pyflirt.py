@@ -12,6 +12,36 @@ from .tl_flirt import tl_flirt
 from .fi_flirt import fi_flirt
 from .fr_flirt import fr_flirt
 from .de_flirt import de_flirt
-from .el_flirt import el_flirt 
+from .el_flirt import el_flirt
+from .he_flirt import he_flirt
+from .hi_flirt import hi_flirt
+from .hu_flirt import hu_flirt
+from .id_flirt import id_flirt
+from .it_flirt import it_flirt
+from .ja_flirt import ja_flirt
+from .kn_flirt import kn_flirt
+from .ko_flirt import ko_flirt
+from .lv_flirt import lv_flirt
+from .lt_flirt import lt_flirt
+from .ms_flirt import ms_flirt
+from .ml_flirt import ml_flirt
+from .mr_flirt import mr_flirt
+from .pl_flirt import pl_flirt
+from .pt_flirt import pt_flirt
+from .pa_flirt import pa_flirt
+from .fa_flirt import fa_flirt
+from .ro_flirt import ro_flirt
+from .ru_flirt import ru_flirt
+from .sr_flirt import sr_flirt
+from .sk_flirt import sk_flirt
+from .es_flirt import es_flirt
+from .sv_flirt import sv_flirt
+from .ta_flirt import ta_flirt
+from .te_flirt import te_flirt
+from .th_flirt import th_flirt
+from .tr_flirt import tr_flirt
+from .uk_flirt import uk_flirt
+from .ur_flirt import ur_flirt
+from .vi_flirt import vi_flirt
 from typing import get_args, Literal, Any, Generator
 from .exception import LanguageNotFoundError, TypeNotFoundError
