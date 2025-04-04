@@ -45,3 +45,135 @@ from .ur_flirt import ur_flirt
 from .vi_flirt import vi_flirt
 from typing import get_args, Literal, Any, Generator
 from .exception import LanguageNotFoundError, TypeNotFoundError
+
+all_flirt: dict[str, list[str]] = {
+    "ar": ar_flirt,
+    "bg": bg_flirt,
+    "bn": bn_flirt,
+    "cs": cs_flirt,
+    "da": da_flirt,
+    "de": de_flirt,
+    "el": el_flirt,
+    "en": en_flirt,
+    "es": es_flirt,
+    "et": et_flirt,
+    "fa": fa_flirt,
+    "fi": fi_flirt,
+    "fr": fr_flirt,
+    "he": he_flirt,
+    "hi": hi_flirt,
+    "hr": hr_flirt,
+    "hu": hu_flirt,
+    "id": id_flirt,
+    "it": it_flirt,
+    "ja": ja_flirt,
+    "kn": kn_flirt,
+    "ko": ko_flirt,
+    "lt": lt_flirt,
+    "lv": lv_flirt,
+    "ml": ml_flirt,
+    "mr": mr_flirt,
+    "ms": ms_flirt,
+    "nl": nl_flirt,
+    "pa": pa_flirt,
+    "pl": pl_flirt,
+    "pt": pt_flirt,
+    "ro": ro_flirt,
+    "ru": ru_flirt,
+    "sk": sk_flirt,
+    "sr": sr_flirt,
+    "sv": sv_flirt,
+    "ta": ta_flirt,
+    "te": te_flirt,
+    "th": th_flirt,
+    "tl": tl_flirt,
+    "tr": tr_flirt,
+    "uk": uk_flirt,
+    "ur": ur_flirt,
+    "vi": vi_flirt,
+}
+
+LANGUAGES = Literal[
+    "ar",
+    "bg",
+    "bn",
+    "cs",
+    "da",
+    "de",
+    "el",
+    "en",
+    "es",
+    "et",
+    "fa",
+    "fi",
+    "fr",
+    "he",
+    "hi",
+    "hr",
+    "hu",
+    "id",
+    "it",
+    "ja",
+    "kn",
+    "ko",
+    "lt",
+    "lv",
+    "ml",
+    "mr",
+    "ms",
+    "nl",
+    "pa",
+    "pl",
+    "pt",
+    "ro",
+    "ru",
+    "sk",
+    "sr",
+    "sv",
+    "ta",
+    "te",
+    "th",
+    "tl",
+    "tr",
+    "uk",
+    "ur",
+    "vi",
+]
+
+TYPES = Literal[
+    "simple",
+    "advance",
+    "all",
+]
+
+LANGUAGE_VALUES: set[str] = set(get_args(LANGUAGES))
+TYPES_VALUES: set[str] = set(get_args(TYPES))
+
+def get_flirts(
+    language: LANGUAGES = "en",
+    type: TYPES = "simple"
+) -> list[str]:
+    """
+    Get a list of flirt lines from the given language and tye.
+    """
+    try:
+        flirts_by_type = all_flirts[language]
+    except KeyError:
+        raise LanguageNotFoundError(language)
+
+    try:
+        return flirts_by_type[type]
+    except KeyError:
+        raise TypeNotFoundError(
+            f"No such type '{type}' in language '{language}'"
+        )
+
+def get_flirt(
+    language: LANGUAGES = "en",
+    type: TYPES = "simple"
+) -> str:
+    """
+    Get a single flirt line from the given language and type.
+    """
+    flirts = get_flirts(language, type)
+    return random.choice(flirts)
