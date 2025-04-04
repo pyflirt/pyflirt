@@ -177,3 +177,22 @@ def get_flirt(
     """
     flirts = get_flirts(language, type)
     return random.choice(flirts)
+
+def get_random_flirt() -> str:
+    language = random.choice(list(LANGUAGE_VALUES))
+    type = random.choice(list(TYPES_VALUES))
+    return get_flirt(language, type)
+
+def search_flirts(keyword: str, language: LANGUAGES = "en", type: TYPES = "all") -> list[str]:
+    flirts = get_flirts(language, type)
+    return [line for line in flirts if keyword.lower() in line.lower()]
+    
+def loop(
+    language: LANGUAGES = "en",
+    type: TYPES = "simple"
+) -> Generator[str, Any, Any]:
+    """
+    Generate flirt lines on loop.
+    """
+    while True:
+        yield get_flirt(language, type)
